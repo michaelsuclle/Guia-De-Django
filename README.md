@@ -115,32 +115,35 @@ _Si quieres empezar de 0 un modelo debes de borrar los archivos dentro de “mig
   ]
   ```
 
-Generar Plantillas
-NOTA:
-? URL es la ruta
-? Views es la lógica
-? Template es el HTML
+## Como generar plantillas
 
-Paso1: Crear un archivo que se llame templates donde estaran tus plantillas
+    NOTA:
+    - URL es la ruta
+    - Views es la lógica
+    - Template es el HTML
 
-2: edita settings.py, añade:
-import os
-y en donde esta TEMPLATES en DIRS algo como:
-        'DIRS': [os.path.join(BASE_DIR, "templates")],
+- Paso 1: Crear una carpeta que se llame templates donde estaran tus plantillas
 
-3: Crea un html dentro de templates
+- Paso 2: Edita settings.py, y añade:
+`import os`
+y en donde esta TEMPLATES en DIRS algo como: 
+`'DIRS': [os.path.join(BASE_DIR, "templates")],`
 
-4: edita el views.py y en la funcion pon algo como:
-def home(request, *args, **kwargs):
-  print(args, kwargs)  
-  print(request.user)  
-  #return HttpResponse('<h1>Bienvenido</h1>') # estoy ya no va
-  return render(request, "home.html")
+- Paso 3: Crea un html dentro de templates
 
-5: No olvides colocar el path de urls.py que esta en la misma carpeta que templates
+- Paso 4: Edita el views.py y en la funcion pon algo como:
+  ```py
+  def home(request, *args, **kwargs):
+    print(args, kwargs)  
+    print(request.user)  
+    #return HttpResponse('<h1>Bienvenido</h1>') # estoy ya no va
+    return render(request, "home.html")
+  ```
 
-views tiene argumentos tambien
-https://docs.djangoproject.com/en/3.2/ref/request-response/
+- Paso 5: No olvides colocar el path de urls.py que esta en la misma carpeta que templates
+
+      views tiene argumentos tambien
+      https://docs.djangoproject.com/en/3.2/ref/request-response/
 
 
 Como usar variables en el html:
