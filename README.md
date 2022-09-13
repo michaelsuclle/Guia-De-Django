@@ -1,14 +1,18 @@
 # Guia-De-Django
 Esta es una guía práctica de Django y la teoría puesta aquí es teoría que aprendí en la universidad, para más información consultar la página oficial de Django: https://docs.djangoproject.com/es/4.1/
 
+#
 
+_Nota: Se debe tener instalado python_
 
-Para crear un proyecto en Django
-Paso 1:Ejecuta en cmd python -m venv "nombre de entorno virtual" para crear el entorno
+_Nota: Esta guia es para Windows_
 
-2:instalas django con : pip install django
+# Como crear un proyecto en Django
+- Paso 1(opcional): Ejecuta en cmd `python -m venv "nombre de entorno virtual"` para crear el entorno
 
-3:abres un proyecto: django-admin startproject "nombre"
+- Paso 2: Instalas django con : `pip install django`
+
+- Paso 3: Abres un proyecto: `django-admin startproject "nombre"`
 
 4:ahora modifica el setting en \nombre\nombre a es y "America/Lima"
 
