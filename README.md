@@ -41,6 +41,7 @@ o
       activar
       https://docs.djangoproject.com/es/3.2/intro/tutorial02/#activating-models
   - Ejemplo:
+  En models dentro de "nombre"
   ```py
   class Paquete(models.Model):
     titulo = models.TextField()
@@ -59,53 +60,60 @@ python manage.py migrate
 ### Listo!
 
 
-Para administrar
+## Como entrar a el apartado de administrador
 
-Paso1:python manage.py createsuperuser
-Y rellenas los datos
+- Paso1: `python manage.py createsuperuser`
 
-2:Para que tus apps aparescan en admin debes añadir algo como:
-from .models import Paquete
-admin.site.register(Paquete)
+Y rellenas los datos de usuario y contraseña que te aparecerán
 
-3:Si quieres ver los campos de algo puedes:
-python manage.py shell
-import app.models import class
-class.objects.all()
+- Paso 2: Para que tus apps aparescan en admin debes añadir algo como:
+  En el archivo view.py
+  ```py
+  from .models import Paquete
+  admin.site.register(Paquete)
+  ```
+
+  Paso 3: Si quieres ver los campos de algo puedes:
+  ```shell
+  python manage.py shell
+  import app.models import class
+  class.objects.all()
+  ```
+
+#
+
+## Como cambiar algún tipo de dato 
+
+_Si quieres empezar de 0 un modelo debes de borrar los archivos dentro de “migrations: 00...”, la carpeta “_pycache_” y “db.sqlite3” pero es preferible modificar_
+
+- Paso 1: Cambia y luego no te olvides `makemigrations` y `migrate` y eso es todo
+
+      atributos de modelos
+      https://docs.djangoproject.com/en/3.2/ref/models/fields/
 
 
+## Como crear una vista
 
-DJANGO 2
+- Paso 1: Creamos una app
+`python manage.py startapp "vista"`
 
-Cambiar tipo de campo
+- Paso 2: Añadimos a settings la app
 
-Si quieres empezar de 0 un modelo
-Borrar los archivos dentro de “migrations: 00...”, la carpeta “_pycache_” y “db.sqlite3” pero es preferible modificar
+- Paso 3: Editamos vista\views.py añadimos algo como algo como:
+  ```py
+  from django.http import HttpResponse
+  def home(*args, **kwargs):
+      return HttpResponse('<h1>Bienvenido</h1>')
+  ```
 
-Paso1: cambia y luego no te olvides makemigrations y migrate 	namas jeje
-atributos de modelos
-https://docs.djangoproject.com/en/3.2/ref/models/fields/
-
-
-Crear una vista
-
-Paso1: creamos una app
-python manage.py startapp "vista"
-
-2: añadimos a settings la app
-
-3: editamos vista\views.py añadimos algo como algo como:
-from django.http import HttpResponse
-def home(*args, **kwargs):
-    return HttpResponse('<h1>Bienvenido</h1>')
-
-4: y tenemos que registrar la url en "nombre de proyecto"\urls.py
-from inicio.views import home
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', home, name="Casa del Turismo"),
-
-]
+- Paso 4: Y tenemos que registrar la url en "nombre de proyecto"\urls.py
+  ```py
+  from inicio.views import home
+  urlpatterns = [
+      path('admin/', admin.site.urls),
+      path('', home, name="Casa del Turismo"),
+  ]
+  ```
 
 Generar Plantillas
 NOTA:
