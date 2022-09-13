@@ -146,36 +146,39 @@ y en donde esta TEMPLATES en DIRS algo como:
       https://docs.djangoproject.com/en/3.2/ref/request-response/
 
 
-Como usar variables en el html:
+## Como usar variables en el html:
 
-Paso1: elemental mi querido watson, {% es codigo,  {{ es atributo https://docs.djangoproject.com/en/3.2/ref/templates/language/#template-inheritance
+- Paso 1: Elemental mi querido watson, {% es codigo,  {{ es atributo 
+https://docs.djangoproject.com/en/3.2/ref/templates/language/#template-inheritance
 
-2: se mete lo que quieres entre {% %} ejm:
-herencia con 
-{% extends 'base.html' %} 
-para remplazar partes con
-{% include 'nav.html' %} 
+- Paso 2: se mete lo que quieres entre {% %} ejm:
+
+  Para herencia con 
+  `{% extends 'base.html' %}`
+
+  Para remplazar partes con
+  `{% include 'nav.html' %}` 
 
 
 Algo asi pondriamos en el html que mostraremos
+
+```html
 {% extends 'base.html' %}
 
 {% block content %}
 {{ request.user }}<br>
 {{ request.user.is_authenticated }}
 {% endblock %}
+```
 
 
-3: mira lo que puede hacer
+Mira lo que puedes hacer
 https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#include
 
 
-Como enviar contexto a nuestro
+#
 
-
-DJANGO 3
-
-Como pasar Contexto?
+## Como pasar Contexto
 en el view.py se puede pasar contexto
 en {} se pasa el contexto, lo que es equivaletente a decir un diccionario
 
