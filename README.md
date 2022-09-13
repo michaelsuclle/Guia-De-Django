@@ -8,7 +8,7 @@ _Nota: Se debe tener instalado python_
 _Nota: Esta guia es para Windows_
 
 # Como crear un proyecto en Django
-- Paso 1(opcional): Ejecuta en cmd `python -m venv "nombre de entorno virtual"` para crear el entorno
+- Paso 1(opcional): Ejecuta en cmd `python -m venv "nombre de entorno virtual"` para crear un entorno virtual
 
 - Paso 2: Instalas django con : `pip install django`
 
@@ -22,33 +22,41 @@ _Nota: Esta guia es para Windows_
 
 Si quieres correr servidor: `python manage.py runserver`
 
-Para crear una APP 
+# Para crear una APP 
 
-tanto los modelos de base de datos como las vistas con apps
+Tanto los modelos de base de datos como las vistas usan apps
 
-Paso1: para crear una app: django-admin startapp "nombre"
+Añadiremos un modelo de base de datos basico
+
+- Paso 1: Para crear una app: `django-admin startapp "nombre"`
 o
-python manage.py startapp inicio
+`python manage.py startapp inicio` da lo mismo
 
-2: añade en nombre\models\ la estructura de tus columnas
-tipos de datos https://docs.djangoproject.com/en/3.2/ref/models/fields/#field-types
-crear
-https://docs.djangoproject.com/es/3.2/intro/tutorial02/#creating-models
-activar
-https://docs.djangoproject.com/es/3.2/intro/tutorial02/#activating-models
-ejm:
-class Paquete(models.Model):
-  titulo = models.TextField()
-  descripcion = models.TextField()
-  descuento = models.IntegerField(default = 0)
+- Paso 2: Añade en nombre\models\ la estructura de tus columnas
 
-3: no olvides añadir tu app a el path de settings
+      tipos de datos
+      https://docs.djangoproject.com/en/3.2/ref/models/fields/#field-types
+      crear
+      https://docs.djangoproject.com/es/3.2/intro/tutorial02/#creating-models
+      activar
+      https://docs.djangoproject.com/es/3.2/intro/tutorial02/#activating-models
+  - Ejemplo:
+  ```py
+  class Paquete(models.Model):
+    titulo = models.TextField()
+    descripcion = models.TextField()
+    descuento = models.IntegerField(default = 0)
+  ```
 
-4: no olvides 
+- Paso 3: No olvides añadir tu app a el Path de settings
+
+- Paso 4: No olvides 
+```shell
 python manage.py makemigrations
 python manage.py migrate
+```
 
-Listo!
+### Listo!
 
 
 Para administrar
