@@ -3,6 +3,29 @@ Esta es una guía práctica de Django y la teoría puesta aquí es teoría que a
 
 #
 
+## Indice
+
+1. [Como crear un proyecto en Django](#como-crear-un-proyecto-en-django)
+1. [Como correr el Servidor](#como-correr-el-servidor)
+1. [Como entrar a el apartado de administrador](#como-entrar-a-el-apartado-de-administrador)
+
+#
+
+1. [Como cambiar el tipo de dato ](#como-cambiar-el-tipo-de-dato)
+1. [Como crear una vista](#como-crear-una-vista)
+1. [Como generar plantillas](#como-generar-plantillas)
+1. [Como usar variables en el html](#como-usar-variables-en-el-html)
+1. [Como pasar Contexto a los html(para datos dinamicos)](#como-pasar-contexto-a-los-htmlpara-datos-dinamicos)
+
+#
+
+1. [Se Puede Usar For En Django](#se-puede-usar-for-en-django)
+1. [Se Puede Usar If En Django](#se-puede-usar-if-en-django)
+1. [Se Pueden Usar Filtros "Funciones" En Django](#se-pueden-usar-filtros-funciones-en-django)
+1. [Como examinar los objetos de los modelos de la base de datos?](#como-examinar-los-objetos-de-los-modelos-de-la-base-de-datos)
+
+#
+
 _Nota: Se debe tener instalado python_
 
 _Nota: Esta guia es para Windows_
@@ -18,11 +41,11 @@ _Nota: Esta guia es para Windows_
 
 - Paso 5: Para migrar lo poco que tienes `python manage.py migrate`
 
-## Correr el Servidor
+## Como correr el Servidor
 
 Si quieres correr servidor: `python manage.py runserver`
 
-## Para crear una APP 
+## Como crear crear una APP 
 
 Tanto los modelos de base de datos como las vistas usan apps
 
@@ -82,7 +105,7 @@ Y rellenas los datos de usuario y contraseña que te aparecerán
 
 #
 
-## Como cambiar algún tipo de dato 
+## Como cambiar el tipo de dato 
 
 _Si quieres empezar de 0 un modelo debes de borrar los archivos dentro de “migrations: 00...”, la carpeta “_pycache_” y “db.sqlite3” pero es preferible modificar_
 
