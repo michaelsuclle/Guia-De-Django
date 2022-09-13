@@ -14,12 +14,13 @@ _Nota: Esta guia es para Windows_
 
 - Paso 3: Abres un proyecto: `django-admin startproject "nombre"`
 
-4:ahora modifica el setting en \nombre\nombre a es y "America/Lima"
+- Paso 4: Ahora modifica el archivo setting en \nombre\nombre, tienes que cambiar el idioma a `"es"` y y la ubicacion a `"America/Lima"`
 
-si quieres correr servidor: python manage.py runserver
+- Paso 5: Para migrar lo poco que tienes `python manage.py migrate`
 
-5:luego: python manage.py migrate
+# Correr el Servidor
 
+Si quieres correr servidor: `python manage.py runserver`
 
 Para crear una APP 
 
