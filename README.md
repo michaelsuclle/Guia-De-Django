@@ -250,31 +250,35 @@ Algo como esto
   <li>{{forloop.counter}} - {{items|upper}}<li>
 ```
 
+## Como examinar los objetos de los modelos de la base de datos?
 
+- Paso 1
 
-Como examinar los objetos de los modelos de la base de datos?
+_Nota: este es la salida de mi cmd, en vuestro caso puede variar un poco_
 
-Paso 1
+Entramos a la consola escribiendo `python manage.py shell` en el cmd
 
-(Entorno) G:\Archivos benjimy\carpeta del programador\Semestre 3\Programación We
-b 2\Proyecto Personal de Turismo usando DJango\Pagina_Turismo>python manage.py s
-hell
-Python 3.9.13 (tags/v3.9.13:6de2ca5, May 17 2022, 16:36:42) [MSC v.1929 64 bit (
-AMD64)] on win32
-Type "help", "copyright", "credits" or "license" for more information.
-(InteractiveConsole)
+```shell
+>>> python manage.py
+```
 
-Paso 2
+- Paso 2
+```shell
 >>> from PaquetesTuristicos.models import Paquete
+```
 
-Paso 3
+- Paso 3
+```py
 >>> Paquete.objects.all()
 <QuerySet [<Paquete: Paquete object (1)>, <Paquete: Paquete object (2)>]>
+```
 
-Paso 4
+- Paso 4
+```py
 >>> obj = Paquete.objects.get(id =2)
+```
 
-Paso 5	como vemos dir nos muestra todos los atributos y metodos de nuestros objetos
+- Paso 5:	Como vemos dir nos muestra todos los atributos y metodos de nuestros objetos
 ```shell
 >>> dir(obj)
 ['DoesNotExist', 'MultipleObjectsReturned', '__class__', '__delattr__', '__dict_ _', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__',  '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__ repr__', '__setattr__', '__setstate__', '__sizeof__', '__str__', '__subclasshook __', '__weakref__', '_check_column_name_clashes', '_check_constraints', '_check_ default_pk', '_check_field_name_clashes', '_check_fields', '_check_id_field', '_ check_index_together', '_check_indexes', '_check_local_fields', '_check_long_col umn_names', '_check_m2m_through_same_relationship', '_check_managers', '_check_m odel', '_check_model_name_db_lookup_clashes', '_check_ordering', '_check_propert y_name_related_field_accessor_clashes', '_check_single_primary_key', '_check_swa ppable', '_check_unique_together', '_do_insert', '_do_update', '_get_FIELD_displ ay', '_get_expr_references', '_get_next_or_previous_by_FIELD', '_get_next_or_pre vious_in_order', '_get_pk_val', '_get_unique_checks', '_meta', '_perform_date_ch ecks', '_perform_unique_checks', '_prepare_related_fields_for_save', '_save_pare nts', '_save_table', '_set_pk_val', '_state', 'check', 'clean', 'clean_fields', 'comprado', 'date_error_message', 'delete', 'descripcion', 'descuento', 'from_db ', 'full_clean', 'get_deferred_fields', 'id', 'objects', 'pk', 'prepare_database _save', 'refresh_from_db', 'save', 'save_base', 'serializable_value', 'titulo', 'unique_error_message', 'validate_unique']
