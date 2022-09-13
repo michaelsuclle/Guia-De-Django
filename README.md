@@ -7,7 +7,7 @@ _Nota: Se debe tener instalado python_
 
 _Nota: Esta guia es para Windows_
 
-# Como crear un proyecto en Django
+## Como crear un proyecto en Django
 - Paso 1(opcional): Ejecuta en cmd `python -m venv "nombre de entorno virtual"` para crear un entorno virtual
 
 - Paso 2: Instalas django con : `pip install django`
@@ -18,11 +18,11 @@ _Nota: Esta guia es para Windows_
 
 - Paso 5: Para migrar lo poco que tienes `python manage.py migrate`
 
-# Correr el Servidor
+## Correr el Servidor
 
 Si quieres correr servidor: `python manage.py runserver`
 
-# Para crear una APP 
+## Para crear una APP 
 
 Tanto los modelos de base de datos como las vistas usan apps
 
