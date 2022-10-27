@@ -90,7 +90,7 @@ python manage.py migrate
 Y rellenas los datos de usuario y contraseña que te aparecerán
 
 - Paso 2: Para que tus apps aparescan en admin debes añadir algo como:
-  En el archivo view.py
+  En el archivo app/admin.py
   ```py
   from .models import Paquete
   admin.site.register(Paquete)
